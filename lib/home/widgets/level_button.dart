@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LevelButtonWidget extends StatelessWidget {
   final String label;
-  
+
   LevelButtonWidget({Key? key, required this.label})
-      : assert((["Fácil", "Medio", "Difícil", "Perito"]).contains(label)),
+      : assert((["Fácil", "Médio", "Difícil", "Perito"]).contains(label)),
         super(key: key);
 
   final config = {
@@ -15,7 +15,7 @@ class LevelButtonWidget extends StatelessWidget {
       "borderColor": AppColors.levelButtonBorderFacil,
       "fontColor": AppColors.levelButtonTextFacil,
     },
-    "Medio": {
+    "Médio": {
       "color": AppColors.levelButtonMedio,
       "borderColor": AppColors.levelButtonBorderMedio,
       "fontColor": AppColors.levelButtonTextMedio,
@@ -49,7 +49,7 @@ class LevelButtonWidget extends StatelessWidget {
         color: color,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
         child: Text(
           label,
           style: GoogleFonts.notoSans(

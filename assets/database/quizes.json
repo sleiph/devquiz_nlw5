@@ -1,13 +1,13 @@
 [
     {
-        "title": "nlw5 Trilha de Flutter",
+        "title": "Trilha de Flutter",
         "image": "assets/images/blocks.png",
         "level": "Fácil",
         "questionAnswered": 1,
         "questions": 
         [
             {
-                "title": "O que você esta achando do Flutter",
+                "title": "O que você está achando do Flutter",
                 "answers": [
                     {"title": "Sem problemas até aqui"},
                     {"title": "Muito bom mas com dificuldade"},
@@ -18,7 +18,7 @@
         ]
     },
     {
-        "title": "nlw5 Command-line em Flutter",
+        "title": "Command-line em Flutter",
         "image": "assets/images/data.png",
         "level": "Médio",
         "questionAnswered": 0,

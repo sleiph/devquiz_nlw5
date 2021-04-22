@@ -7,8 +7,8 @@ enum Level { easy, medium, hard, expert }
 extension LevelStringExt on String {
   Level get parse => {
         "Fácil": Level.easy,
-        "Medio": Level.medium,
-        "Dicfícil": Level.hard,
+        "Médio": Level.medium,
+        "Difícil": Level.hard,
         "Perito": Level.expert
       }[this]!;
 }
@@ -16,8 +16,8 @@ extension LevelStringExt on String {
 extension LevelExt on Level {
   String get parse => {
         Level.easy: "Fácil",
-        Level.medium: "Medio",
-        Level.hard: "Dicfícil",
+        Level.medium: "Médio",
+        Level.hard: "Difícil",
         Level.expert: "Perito"
       }[this]!;
 }
