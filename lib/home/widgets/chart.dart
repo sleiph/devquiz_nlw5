@@ -2,23 +2,24 @@ import 'package:devquiz_nlw5/core/core.dart';
 import 'package:flutter/material.dart';
 
 class ChartWidget extends StatelessWidget {
-  const ChartWidget({Key? key}) : super(key: key);
+  final int score;
+
+  const ChartWidget({Key? key, required this.score}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      //padding: EdgeInsets.all(8),
       width: 80,
-      height: 70,
+      height: 80,
       child: Stack(
         children: [
           Center(
             child: Container(
               width: 80,
-              height: 70,
+              height: 80,
               child: CircularProgressIndicator(
                 strokeWidth: 10,
-                value: 0.75,
+                value: score / 100,
                 backgroundColor: AppColors.chartSecondary,
                 valueColor:
                     AlwaysStoppedAnimation<Color>(AppColors.chartPrimary),
@@ -27,7 +28,7 @@ class ChartWidget extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "75%",
+              "$score%",
               style: AppTextStyles.heading,
             ),
           )

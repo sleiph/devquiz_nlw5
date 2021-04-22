@@ -1,4 +1,4 @@
-import 'package:devquiz_nlw5/core/app_widget.dart';
+import 'package:devquiz_nlw5/core/core.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "nlw5 Trilha de Flutter",
+        "image": "assets/images/blocks.png",
+        "level": "Fácil",
+        "questionAnswered": 1,
+        "questions": 
+        [
+            {
+                "title": "O que você esta achando do Flutter",
+                "answers": [
+                    {"title": "Sem problemas até aqui"},
+                    {"title": "Muito bom mas com dificuldade"},
+                    {"title": "Ótimo acertando tudo de primeira","isRight": true},
+                    {"title": "Incrivel, irei recomendar"}
+                ]
+            }
+        ]
+    },
+    {
+        "title": "nlw5 Command-line em Flutter",
+        "image": "assets/images/data.png",
+        "level": "Médio",
+        "questionAnswered": 0,
+        "questions": 
+        [
+            {
+                "title": "--migrate\nQual o uso do comando Dart acima? ",
+                "answers": [
+                    {"title": "Para ativar nullSafe no projeto","isRight": true},
+                    {"title": "Migrar para o Dart mais atual"},
+                    {"title": "Para limpar os caches do Dart"},
+                    {"title": "Fazer varredura de código morto no projeto"}
+                ]
+            }
+        ]
+    }
+]

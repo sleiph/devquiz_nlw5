@@ -1,4 +1,4 @@
-import 'package:devquiz_nlw5/challenge/widgets/answer.dart';
+import 'package:devquiz_nlw5/challenge/widgets/widgets.dart';
 import 'package:devquiz_nlw5/core/core.dart';
 import 'package:flutter/material.dart';
 
@@ -13,40 +13,21 @@ class QuizWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyles.heading.copyWith(fontSize: 20),
+            style: AppTextStyles.heading,
           ),
-          SizedBox(height: 24),
-          AwnserWidget(
-            isRight: false,
-            isSelected: true,
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
+          SizedBox(
+            height: 24,
           ),
-          AwnserWidget(
-            isRight: false,
-            isSelected: false,
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
-          ),
-          AwnserWidget(
-            isRight: true,
-            isSelected: true,
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
-          ),
-          AwnserWidget(
-            isRight: false,
-            isSelected: false,
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
-          ),
-          SizedBox(height: 80),
-          Expanded(
-              child: Text(
-            "#embuscadoproximonivel",
-            style: AppTextStyles.heading40
-                .copyWith(fontSize: 30, color: Colors.green),
-          ))
+          AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
+          AnswerWidget(
+              isRight: true,
+              isSelected: true,
+              title:
+                  "Possibilita a criação de aplicativos compilados nativamente"),
+          AnswerWidget(title: "Acho que é uma marca de café do Himalaia"),
+          AnswerWidget(
+              title:
+                  "Possibilita a criação de desktops que são muito incríveis"),
         ],
       ),
     );

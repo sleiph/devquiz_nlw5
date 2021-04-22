@@ -1,5 +1,4 @@
-import 'package:devquiz_nlw5/challenge/widgets/question_indicator.dart';
-import 'package:devquiz_nlw5/challenge/widgets/quiz.dart';
+import 'package:devquiz_nlw5/challenge/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
@@ -12,13 +11,14 @@ class _ChallengePageState extends State<ChallengePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: Size.fromHeight(100),
         child: SafeArea(
-          top: true,
           child: QuestionIndicatorWidget(),
         ),
       ),
-      body: QuizWidget(title: "Aqui a super pergunta"),
+      body: QuizWidget(
+        title: "Principais funções do Flutter :)",
+      ),
     );
   }
 }
