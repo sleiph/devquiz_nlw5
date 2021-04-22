@@ -1,6 +1,7 @@
+import 'package:devquiz_nlw5/challenge/challenge_page.dart';
 import 'package:devquiz_nlw5/core/core.dart';
-import 'package:devquiz_nlw5/home/home.dart';
-import 'package:devquiz_nlw5/home/widgets/widgets.dart';
+import 'home.dart';
+import 'widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
-
   @override
   void initState() {
     super.initState();
@@ -27,46 +27,48 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     if (controller.state == HomeState.success) {
       return Scaffold(
-        appBar: AppBarWidget(
-          user: controller.user!,
-        ),
+        appBar: AppBarWidget(user: controller.user!),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  LevelButtonWidget(
-                    label: "Fácil",
-                  ),
-                  LevelButtonWidget(
-                    label: "Médio",
-                  ),
-                  LevelButtonWidget(
-                    label: "Difícil",
-                  ),
-                  LevelButtonWidget(
-                    label: "Perito",
-                  ),
-                ],
-              ),
               SizedBox(
-                height: 24,
+                height: 32,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  children: [
+                    LevelButtonWidget(label: 'Fácil'),
+                    SizedBox(width: 10),
+                    LevelButtonWidget(label: 'Médio'),
+                    SizedBox(width: 10),
+                    LevelButtonWidget(label: 'Difícil'),
+                    SizedBox(width: 10),
+                    LevelButtonWidget(label: 'Perito'),
+                  ],
+                ),
               ),
+              SizedBox(height: 20),
               Expanded(
                 child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  crossAxisCount: 2,
                   children: controller.quizes!
                       .map(
                         (e) => QuizCardWidget(
-                          image: e.image,
                           title: e.title,
                           completed:
-                              "${e.questionAnswered} de ${e.questions.length}",
-                          progress: e.questionAnswered / e.questions.length,
+                              '${e.questionAnswered}/${e.questions.length}',
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      ChallengePage(questions: e.questions),
+                                ));
+                          },
+                          percent: e.questionAnswered / e.questions.length,
                         ),
                       )
                       .toList(),

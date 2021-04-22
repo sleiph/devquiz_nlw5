@@ -1,33 +1,46 @@
 import 'package:devquiz_nlw5/challenge/widgets/widgets.dart';
 import 'package:devquiz_nlw5/core/core.dart';
+import 'package:devquiz_nlw5/shared/models/models.dart';
 import 'package:flutter/material.dart';
 
-class QuizWidget extends StatelessWidget {
-  final String title;
-  const QuizWidget({Key? key, required this.title}) : super(key: key);
+class QuizWidget extends StatefulWidget {
+  final QuestionModel question;
+  final VoidCallback onChanged;
+  const QuizWidget({Key? key, required this.question, required this.onChanged})
+      : super(key: key);
+
+  @override
+  _QuizWidgetState createState() => _QuizWidgetState();
+}
+
+class _QuizWidgetState extends State<QuizWidget> {
+  int indexSelected = -1;
+  AnswerModel answer(int index) => widget.question.answers[index];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          Text(
-            title,
-            style: AppTextStyles.heading,
+          SizedBox(height: 40),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(widget.question.title, style: AppTextStyles.heading),
           ),
-          SizedBox(
-            height: 24,
-          ),
-          AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
-          AnswerWidget(
-              isRight: true,
-              isSelected: true,
-              title:
-                  "Possibilita a criação de aplicativos compilados nativamente"),
-          AnswerWidget(title: "Acho que é uma marca de café do Himalaia"),
-          AnswerWidget(
-              title:
-                  "Possibilita a criação de desktops que são muito incríveis"),
+          SizedBox(height: 20),
+          for (var i = 0; i < widget.question.answers.length; i++)
+            AnswerWidget(
+              answer: answer(i),
+              isSelected: indexSelected == i,
+              disabled: indexSelected != -1,
+              onTap: () {
+                indexSelected = i;
+                widget.onChanged();
+                setState(() {});
+                Future.delayed(Duration(seconds: 1))
+                    .then((value) => widget.onChanged());
+              },
+            ),
         ],
       ),
     );

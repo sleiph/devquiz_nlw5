@@ -25,7 +25,7 @@
         "questions": 
         [
             {
-                "title": "--migrate\nQual o uso do comando Dart acima? ",
+                "title": "--migrate\n\nQual o uso do comando Dart acima? ",
                 "answers": [
                     {"title": "Para ativar nullSafe no projeto","isRight": true},
                     {"title": "Migrar para o Dart mais atual"},

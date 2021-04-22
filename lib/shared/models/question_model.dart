@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:devquiz_nlw5/shared/models/models.dart';
+import 'models.dart';
 
 class QuestionModel {
   final String title;
