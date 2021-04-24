@@ -1,12 +1,13 @@
-import 'package:devquiz_nlw5/challenge/widgets/widgets.dart';
+import 'widgets.dart';
 import 'package:devquiz_nlw5/core/core.dart';
 import 'package:devquiz_nlw5/shared/models/models.dart';
 import 'package:flutter/material.dart';
 
 class QuizWidget extends StatefulWidget {
   final QuestionModel question;
-  final VoidCallback onChanged;
-  const QuizWidget({Key? key, required this.question, required this.onChanged})
+  final ValueChanged<bool> onSelected;
+
+  QuizWidget({Key? key, required this.question, required this.onSelected})
       : super(key: key);
 
   @override
@@ -14,7 +15,8 @@ class QuizWidget extends StatefulWidget {
 }
 
 class _QuizWidgetState extends State<QuizWidget> {
-  int indexSelected = -1;
+  int selecteIndex = -1;
+
   AnswerModel answer(int index) => widget.question.answers[index];
 
   @override
@@ -22,23 +24,26 @@ class _QuizWidgetState extends State<QuizWidget> {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(widget.question.title, style: AppTextStyles.heading),
+          SizedBox(
+            height: 64,
           ),
-          SizedBox(height: 20),
+          Text(
+            this.widget.question.title,
+            style: AppTextStyles.heading,
+          ),
+          SizedBox(
+            height: 24,
+          ),
           for (var i = 0; i < widget.question.answers.length; i++)
             AnswerWidget(
-              answer: answer(i),
-              isSelected: indexSelected == i,
-              disabled: indexSelected != -1,
-              onTap: () {
-                indexSelected = i;
-                widget.onChanged();
+              answerModel: answer(i),
+              disabled: selecteIndex != -1,
+              isSelected: selecteIndex == i,
+              onTap: (value) {
+                selecteIndex = i;
                 setState(() {});
-                Future.delayed(Duration(seconds: 1))
-                    .then((value) => widget.onChanged());
+                Future.delayed(Duration(milliseconds: 500))
+                    .then((_) => widget.onSelected(value));
               },
             ),
         ],

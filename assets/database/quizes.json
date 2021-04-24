@@ -11,8 +11,40 @@
                 "answers": [
                     {"title": "Sem problemas até aqui"},
                     {"title": "Muito bom mas com dificuldade"},
-                    {"title": "Ótimo acertando tudo de primeira","isRight": true},
+                    {"title": "Ótimo acertando tudo de primeira",
+                        "isRight": true},
                     {"title": "Incrivel, irei recomendar"}
+                ]
+            },
+            {
+                "title": "O que o Flutter faz em sua totalidade",
+                "answers": [
+                    {"title": "Kit de desenvolvimento de interface de usuário"},
+                    {"title": "Possibilita a criação de aplicativos compilados nativamente",
+                        "isRight": true},
+                    {"title": "Marca de café do Himalaia"},
+                    {"title": "Possibilita a criação de desktops que são muito incríveis"}
+                ] 
+            },
+            {
+    
+                "title": "Qual linguagem é utilizada no Flutter?",
+                "answers": [
+                    {"title": "JavaScript"},
+                    {"title": "Java"},
+                    {"title": "Dart", 
+                        "isRight": true},
+                    {"title": "SQL"}
+                ] 
+            },
+            {
+                "title": "Qual empresa fundou o Flutter?",
+                "answers": [
+                    {"title": "Google",
+                        "isRight": true},
+                    {"title": "Facebook"},
+                    {"title": "Uber"},
+                    {"title": "Microsoft"}
                 ]
             }
         ]
@@ -31,6 +63,42 @@
                     {"title": "Migrar para o Dart mais atual"},
                     {"title": "Para limpar os caches do Dart"},
                     {"title": "Fazer varredura de código morto no projeto"}
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Integração Nativa",
+        "image": "assets/images/hierarchy.png",
+        "level": "Difícil",
+        "questionAnswered": 0,
+        "questions": [
+            {
+                "title": "O que o Flutter faz em sua totalidade?",
+                "answers": [
+                    { "title": "Kit de desenvolvimento de interface de usuário" },
+                    { "title": "Possibilita a criação de aplicativos compilados nativamente",
+                        "isRight": true },
+                    { "title": "Acho que é uma marca de café do Himalaia" },
+                    { "title": "Possibilita a criação de desktops que são muito incríveis" }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Widgets no Flutter",
+        "image": "assets/images/laptop.png",
+        "level": "Perito",
+        "questionAnswered": 0,
+        "questions": [
+            {
+                "title": "O que o Flutter faz em sua totalidade?",
+                "answers": [
+                { "title": "Kit de desenvolvimento de interface de usuário" },
+                { "title": "Possibilita a criação de aplicativos compilados nativamente",
+                    "isRight": true },
+                { "title": "Acho que é uma marca de café do Himalaia" },
+                { "title": "Possibilita a criação de desktops que são muito incríveis" }
                 ]
             }
         ]
